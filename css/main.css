@@ -101,28 +101,56 @@ div,
 section,
 footer,
 header {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+}
+.row {
+  display: grid;
+  row-gap: 1rem;
+  margin: 0 1rem 3rem 1rem;
 }
 .column{
-  background-color: lightyellow;
-  margin-right: 1rem;
+  /* background-color: lightyellow; */
+  /* margin-right: 1rem; */
 }
 .heading {
+  font-family: Ubuntu, Verdana, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
   text-align: center;
+}
+
+.tagline {
+  margin-top: -0.8rem;
+  font-size: 0.7rem;
+  text-align: center;
+  color: rgba(128, 128, 128);
+}
+
+.logo {
+  max-height: 2.5rem;
+  bottom: 0;
 }
 
 
 
 /* Small only */
-@media screen and (max-width: 39.9375em) {}
+@media screen and (max-width: 39.9375em) {
+  .logo {
+    max-height: 3rem;
+    position: static;
+  }
+  .s-hide {
+    display: none;
+  }
+}
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
   .row {
-    display: grid;
     width: 85vw;
     max-width: 70rem;
-    margin: 0 auto;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    margin: 0 auto 3rem auto;
   } 
 
   .m-col-2{
@@ -148,9 +176,17 @@ header {
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .m-hide {
+    display: none;
+  }
+
   .special-project {
     grid-column-start: 1;
     grid-column-end: -1;
+  }
+
+  .special-project img{
+    max-height: 20rem;
   }
 
 }
@@ -172,16 +208,27 @@ header {
   .l-col-6{
     grid-template-columns: repeat(6,1fr) ;
   }
+  .l-hide{
+    display: none;
+  }
 }
 
 /* Large only */
-@media screen and (min-width: 64em) and (max-width: 74.9375em) {}
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+  
+}
 
 /* ==========================================================================
    MODULES
    ========================================================================== */
 
+.page__slider {
+  background-color: rgb(230, 230, 230)
+}
 
+.page__slider img {
+  height: 25vh;
+}
 
 
 /* ==========================================================================
@@ -363,3 +410,17 @@ header {
     page-break-after: avoid;
   }
 }
+
+.project {
+  position: relative;
+  margin: 0;
+}
+
+.project__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.8)
+}
+
